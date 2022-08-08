@@ -31,10 +31,4 @@ $ docker exec node-3 curl http://172.17.0.2:3000
 ```
 
 
-Clean resources with:
-
-```shell
-docker stop node-1 node-2 node-3 node-4
-docker rm node-1 node-2 node-3 node-4
-docker rmi node-1 node-2 node-3 node-4
-```
+Clean resources with `clean.sh`.

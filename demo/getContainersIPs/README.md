@@ -1,6 +1,6 @@
 # About
 
-The demo introduces you to subnets.
+Retrieve a container's IP address inside the docker host network.
 
 # Demo
 

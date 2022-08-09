@@ -9,3 +9,8 @@ The guide introduces you to docker.
 
 [ips]: demo/getContainersIPs/README.md
 [ipsDiffNet]: demo/getContainersIPsDifferentNetworks/README.md
+
+# Resources
+
++ [Docker Full Course | KodeKloud](https://www.youtube.com/watch?v=zJ6WbK9zFpI&t=5328s)
++ [Docker Networking | Network Chuck](https://www.youtube.com/watch?v=bKFMS5C4CG0)

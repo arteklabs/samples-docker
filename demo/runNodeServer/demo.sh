@@ -13,4 +13,4 @@
 docker build . -t node-1
 
 # run containers
-docker run -d -p 0.0.0.0:3000:3000 --name=node-1 node-1 node-1 3000
+docker run --rm -d --name node-1 -p 0.0.0.0:3000:3000 node-1 node-1 3000

@@ -20,12 +20,18 @@ docker build . -t node-1
 # if the volume had not been created explicitly, it would be created 
 # automatically with the run command.
 docker run \
+    --rm \
+    -d \
     --mount type=volume,source=nodeVolume,target=/home \
     -p 0.0.0.0:3000:3000 \
-    --name=node-volume node-1 node-volume 3000 &
+    --name node-volume \
+    node-1 node-volume 3000
 
 # volume binding
 docker run \
+    --rm \
+    -d \
     --mount type=bind,source=/home/dipm,target=/home \
     -p 0.0.0.0:3001:3000 \
-    --name=node-binding node-1 node-binding 3001 &
+    --name node-binding \
+    node-1 node-binding 3001

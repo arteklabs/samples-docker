@@ -24,4 +24,4 @@ docker rmi ${registry}:latest
 docker pull ${registry}:latest
 
 # run container
-docker run -p 0.0.0.0:3000:3000 --name=node-1 ${registry} node-1 3000 &
+docker run -p 0.0.0.0:3000:3000 --rm -d --name=node-1 ${registry} node-1 3000

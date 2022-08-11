@@ -27,6 +27,6 @@ docker build . -t demo-subnet-2
 docker build . -t demo-subnet-3
 
 # run containers
-docker run demo-subnet-1 &
-docker run demo-subnet-2 &
-docker run demo-subnet-3 &
+docker run --rm -d --name demo-subnet-1 demo-subnet-1
+docker run --rm -d --name demo-subnet-1 demo-subnet-2
+docker run --rm -d --name demo-subnet-1 demo-subnet-3

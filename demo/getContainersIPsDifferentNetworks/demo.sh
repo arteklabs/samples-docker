@@ -30,10 +30,10 @@ docker build . -t node-3
 docker build . -t node-4
 
 # run containers
-docker run -p 0.0.0.0:3000:3000 --name=node-1 node-1 node-1 3000 &
-docker run -p 0.0.0.0:3001:3000 --name=node-2 node-2 node-2 3001 &
+docker run --rm --name node-1 -p 0.0.0.0:3000:3000 node-1 node-1 3000
+docker run --rm --name node-2 -p 0.0.0.0:3001:3000 node-2 node-2 3001
 
-docker run -p 0.0.0.0:3002:3000 --name=node-3 --network=${NETWORK_NAME} \
-    node-3 node-3 3002 &
-docker run -p 0.0.0.0:3003:3000 --name=node-4 --network=${NETWORK_NAME} \
-    node-4 node-4 3003 &
+docker run --rm --name node-3 -p 0.0.0.0:3002:3000 --network=${NETWORK_NAME} \
+    node-3 node-3 3002
+docker run --rm --name node-4 -p 0.0.0.0:3003:3000 --network=${NETWORK_NAME} \
+    node-4 node-4 3003

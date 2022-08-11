@@ -1,0 +1,33 @@
+# buildind the target images in `Dockerfile`:
+#
+# docker-compose build <target>
+#
+# docker-compose build debug
+# docker-compose build prod
+#
+# running the containers:
+#
+# docker-compose up <target>
+#
+# docker-compose up debug
+# docker-compose up prod
+version: "3.4"
+services:
+  debug:
+    container_name: node-debug
+    image: node-debug
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: debug
+    ports:
+      - 3025:3000
+  prod:
+    container_name: node-prod
+    image: node-prod
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: prod
+    ports:
+      - 3026:3000

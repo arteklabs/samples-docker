@@ -1,0 +1,23 @@
+# buildind the target images in `Dockerfile`:
+#
+# docker-compose build <target>
+#
+# docker-compose build nginx
+#
+# running the containers:
+#
+# docker-compose up -d <target>
+#
+# docker-compose up -d nginx
+version: "3.4"
+services:
+  nginx:
+    container_name: nginxdemo
+    image: nginxdemo
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:80
+    volumes:
+      - ./html/:/usr/share/nginx/html

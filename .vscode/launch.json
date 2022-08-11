@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "debug",
+            "type": "node",
+            "request": "attach",
+            "remoteRoot": "./",
+            "port": 3025,
+            "address": "0.0.0.0",
+            "localRoot": "${workspaceFolder}/demo/debugNode/",
+            "restart": true
+        },
+        {
+            "name": "prod",
+            "type": "node",
+            "request": "attach",
+            "remoteRoot": "./",
+            "port": 3026,
+            "address": "0.0.0.0",
+            "localRoot": "${workspaceFolder}/demo/debugNode/",
+        }
+    ]
+}

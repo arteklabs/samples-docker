@@ -16,8 +16,6 @@ The [application][node]
 
 ## Publish A Static Website With Nginx
 
-
-
 # Resources
 
 + [Docker Official Doc](https://docs.docker.com/get-started/overview/)

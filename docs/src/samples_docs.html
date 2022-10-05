@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Contributing" href="contributing.html" /><link rel="prev" title="Samples" href="samples.html" />
 
     <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
-        <title>Debug Node - Lifespline Samples: Docker 1.0.0-beta documentation</title>
+        <title>Quickstart - Lifespline Samples: Docker 1.0.0-beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -157,7 +157,8 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="samples.html">Samples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Debug Node</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug-node">Debug Node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-node-server">Run Node Server</a></li>
 </ul>
@@ -202,13 +203,23 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="debug-node">
+          <section id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h1>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
+<p>Docker quickstart fundamentals</p>
+</section>
+<section id="sample">
+<h2>Sample<a class="headerlink" href="#sample" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="debug-node">
 <h1>Debug Node<a class="headerlink" href="#debug-node" title="Permalink to this heading">#</a></h1>
 <p>Authenticate with the <a class="reference external" href="https://hub.docker.com/repository/docker/lifespline/demo-docker">registry</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker login docker.io/lifespline/demo-docker
@@ -225,8 +236,8 @@ server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello
 </section>
 <section id="id1">
 <h1>Registry<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<section id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2>About<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Publish your image to the docker <a class="reference external" href="https://hub.docker.com/repository/docker/lifespline/demo-docker">registry</a>.</p>
 </section>
 <section id="demo">
@@ -247,12 +258,12 @@ server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello
 </section>
 <section id="run-node-server">
 <h1>Run Node Server<a class="headerlink" href="#run-node-server" title="Permalink to this heading">#</a></h1>
-<section id="id3">
-<h2>About<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2>About<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>Containers in different docker host networks can communicate between themselves, but not between networks.</p>
 </section>
-<section id="id4">
-<h2>Demo<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h2>Demo<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>Run <code class="docutils literal notranslate"><span class="pre">demo.sh</span></code> to build and run the container. Check that it’s accessible from the docker host:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl http://0.0.0.0:3000
 server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello!&#39;</span>
@@ -312,8 +323,39 @@ docker rmi node-1
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
+<li><a class="reference internal" href="#sample">Sample</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debug-node">Debug Node</a></li>
+<li><a class="reference internal" href="#id1">Registry</a><ul>
+<li><a class="reference internal" href="#id2">About</a></li>
+<li><a class="reference internal" href="#demo">Demo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#run-node-server">Run Node Server</a><ul>
+<li><a class="reference internal" href="#id4">About</a></li>
+<li><a class="reference internal" href="#id5">Demo</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

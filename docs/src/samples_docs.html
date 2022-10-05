@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -158,6 +158,8 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="samples.html">Samples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Debug Node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-node-server">Run Node Server</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -200,7 +202,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -208,12 +210,6 @@
         <article role="main">
           <section id="debug-node">
 <h1>Debug Node<a class="headerlink" href="#debug-node" title="Permalink to this heading">#</a></h1>
-<ul class="simple">
-<li><p>install the docker extension <code class="docutils literal notranslate"><span class="pre">ms-azuretools.vscode-docker</span></code></p></li>
-<li><p>target</p></li>
-</ul>
-<section id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this heading">#</a></h2>
 <p>Authenticate with the <a class="reference external" href="https://hub.docker.com/repository/docker/lifespline/demo-docker">registry</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker login docker.io/lifespline/demo-docker
 Username: lifespline
@@ -226,6 +222,48 @@ server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello
 </pre></div>
 </div>
 <p>Clean resources with <code class="docutils literal notranslate"><span class="pre">clean.sh</span></code></p>
+</section>
+<section id="id1">
+<h1>Registry<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
+<p>Publish your image to the docker <a class="reference external" href="https://hub.docker.com/repository/docker/lifespline/demo-docker">registry</a>.</p>
+</section>
+<section id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this heading">#</a></h2>
+<p>Authenticate with the registry:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker login docker.io/lifespline/demo-docker
+Username: lifespline
+Password:
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">demo.sh</span></code> to build, publish and pull the image. Test that:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl http://0.0.0.0:3000
+server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello!&#39;</span>
+</pre></div>
+</div>
+<p>Clean resources with <code class="docutils literal notranslate"><span class="pre">clean.sh</span></code></p>
+</section>
+</section>
+<section id="run-node-server">
+<h1>Run Node Server<a class="headerlink" href="#run-node-server" title="Permalink to this heading">#</a></h1>
+<section id="id3">
+<h2>About<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>Containers in different docker host networks can communicate between themselves, but not between networks.</p>
+</section>
+<section id="id4">
+<h2>Demo<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">demo.sh</span></code> to build and run the container. Check that it’s accessible from the docker host:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl http://0.0.0.0:3000
+server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello!&#39;</span>
+</pre></div>
+</div>
+<p>Clean resources with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker stop node-1
+docker rm node-1
+docker rmi node-1
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -274,27 +312,8 @@ server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Debug Node</a><ul>
-<li><a class="reference internal" href="#demo">Demo</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

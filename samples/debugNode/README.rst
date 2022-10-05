@@ -2,12 +2,6 @@
 Debug Node
 ==========
 
-* install the docker extension ``ms-azuretools.vscode-docker``
-* target
-
-Demo
-----
-
 Authenticate with the `registry <https://hub.docker.com/repository/docker/lifespline/demo-docker>`_:
 
 .. code:: bash

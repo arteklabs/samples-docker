@@ -1,0 +1,1 @@
+.. include:: ../../../samples/debugNode/README.rst

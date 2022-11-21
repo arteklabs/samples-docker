@@ -9,8 +9,20 @@ Run Command in Container
 Exercise
 --------
 
+* push container and have it executing a command
+* execute a command in a sleeping (running) container that is doing nothing except waiting for commands
+
 .. code:: bash
 
-   $ docker run --name=tmp ubuntu echo hello from the docker container
+   # download container and have executing a command
+   $ docker run --rm --name=tmp ubuntu echo hello from the docker container
    hello from the docker container
-   $ docker rm tmp
+   $ docker rmi ubuntu
+
+   # execute a command in a sleeping (running) container that is doing nothing 
+   # except waiting for commands
+   $ docker run --name=tmp -d --rm ubuntu sleep infinity
+   $ docker exec tmp echo hello from the docker container
+   hello from the docker container
+   $ docker stop tmp
+   $ docker rmi ubuntu

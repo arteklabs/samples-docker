@@ -7,3 +7,4 @@
 .. include:: ../../../samples/debugNode/README.rst
 .. include:: ../../../samples/dockerRegistry/README.rst
 .. include:: ../../../samples/runNodeServer/README.rst
+.. include:: ../../../samples/run_command_in_container/README.rst

@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Contributing" href="contributing.html" /><link rel="prev" title="Samples" href="samples.html" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Quickstart - Lifespline Samples: Docker 1.0.0-beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
@@ -161,6 +161,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#debug-node">Debug Node</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-node-server">Run Node Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-command-in-container">Run Command in Container</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -209,7 +210,7 @@
           </label>
         </div>
         <article role="main">
-          <section id="quickstart">
+          <a href="https://github.com/lifespline/samples-docker.git"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork Me On Github" data-recalc-dims="1"></a><section id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h1>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
@@ -273,6 +274,17 @@ server <span class="s1">&#39;node-1&#39;</span> says <span class="s1">&#39;hello
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker stop node-1
 docker rm node-1
 docker rmi node-1
+</pre></div>
+</div>
+<a href="https://github.com/lifespline/samples-docker.git"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork Me On Github" data-recalc-dims="1"></a></section>
+</section>
+<section id="run-command-in-container">
+<h1>Run Command in Container<a class="headerlink" href="#run-command-in-container" title="Permalink to this heading">#</a></h1>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run --name<span class="o">=</span>tmp ubuntu <span class="nb">echo</span> hello from the docker container
+hello from the docker container
+$ docker rm tmp
 </pre></div>
 </div>
 </section>
@@ -349,6 +361,10 @@ docker rmi node-1
 <li><a class="reference internal" href="#run-node-server">Run Node Server</a><ul>
 <li><a class="reference internal" href="#id4">About</a></li>
 <li><a class="reference internal" href="#id5">Demo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#run-command-in-container">Run Command in Container</a><ul>
+<li><a class="reference internal" href="#exercise">Exercise</a></li>
 </ul>
 </li>
 </ul>

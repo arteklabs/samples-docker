@@ -282,9 +282,22 @@ docker rmi node-1
 <h1>Run Command in Container<a class="headerlink" href="#run-command-in-container" title="Permalink to this heading">#</a></h1>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run --name<span class="o">=</span>tmp ubuntu <span class="nb">echo</span> hello from the docker container
+<ul class="simple">
+<li><p>push container and have it executing a command</p></li>
+<li><p>execute a command in a sleeping (running) container that is doing nothing except waiting for commands</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># download container and have executing a command</span>
+$ docker run --rm --name<span class="o">=</span>tmp ubuntu <span class="nb">echo</span> hello from the docker container
 hello from the docker container
-$ docker rm tmp
+$ docker rmi ubuntu
+
+<span class="c1"># execute a command in a sleeping (running) container that is doing nothing</span>
+<span class="c1"># except waiting for commands</span>
+$ docker run --name<span class="o">=</span>tmp -d --rm ubuntu sleep infinity
+$ docker <span class="nb">exec</span> tmp <span class="nb">echo</span> hello from the docker container
+hello from the docker container
+$ docker stop tmp
+$ docker rmi ubuntu
 </pre></div>
 </div>
 </section>

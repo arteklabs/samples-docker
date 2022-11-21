@@ -6,7 +6,7 @@
 Samples
 =======
 
-``lifespline/samples-docker`` teaches about `docker <https://www.docker.com/>`_ through a series of samples.
+``artek/samples-docker`` sharpens your `docker <https://www.docker.com/>`_ skills through a series of exercises.
 
 .. toctree::
    :maxdepth: 2

@@ -162,6 +162,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#id1">Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-node-server">Run Node Server</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-command-in-container">Run Command in Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mount-or-bind-a-volume">Mount or Bind a Volume</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -300,6 +301,29 @@ $ docker stop tmp
 $ docker rmi ubuntu
 </pre></div>
 </div>
+<a href="https://github.com/lifespline/samples-docker.git"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork Me On Github" data-recalc-dims="1"></a></section>
+</section>
+<section id="mount-or-bind-a-volume">
+<h1>Mount or Bind a Volume<a class="headerlink" href="#mount-or-bind-a-volume" title="Permalink to this heading">#</a></h1>
+<section id="id6">
+<h2>Exercise<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Run <cite>demo.sh</cite> to build a volume, a container and run the container. Write <cite>test</cite> to:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker container <span class="nb">exec</span> -it node-volume nano /home/test.txt
+</pre></div>
+</div>
+<p>Verify that:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo cat /var/lib/docker/volumes/nodeVolume/_data/test.txt
+</pre></div>
+</div>
+<p>yields <cite>test</cite>. Write <cite>test</cite> to:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker container <span class="nb">exec</span> -it node-binding nano /home/test.txt
+</pre></div>
+</div>
+<p>Verify that:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cat ~/test.txt
+</pre></div>
+</div>
+<p>yields <cite>test</cite>.</p>
 </section>
 </section>
 
@@ -378,6 +402,10 @@ $ docker rmi ubuntu
 </li>
 <li><a class="reference internal" href="#run-command-in-container">Run Command in Container</a><ul>
 <li><a class="reference internal" href="#exercise">Exercise</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mount-or-bind-a-volume">Mount or Bind a Volume</a><ul>
+<li><a class="reference internal" href="#id6">Exercise</a></li>
 </ul>
 </li>
 </ul>

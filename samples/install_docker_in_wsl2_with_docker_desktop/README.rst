@@ -21,3 +21,4 @@ Solution
     * ``sudo apt install docker.io``
     * ``docker --version``
     * ``docker run hello-world``
+* edit ``C:\Users\<USER>\.docker\daemon.json`` such that ``"buildkit": false``

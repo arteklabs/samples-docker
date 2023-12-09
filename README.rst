@@ -1,7 +1,5 @@
-==========================
-Lifespline Samples: Docker
-==========================
+# samples-docker
 
-``lifespline/samples-docker`` teaches abouth `docker <https://www.docker.com/>`_ through a series of samples.
+## getting started
 
-Read the docs `here <https://lifespline.github.io/samples-docker/>`_.
+`build context` the build context of the docker image is the parent dir where the `Dockerfile` is located.
